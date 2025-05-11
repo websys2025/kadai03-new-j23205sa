@@ -31,6 +31,11 @@
 
             // 商品購入の関数
             function buyItem(no) {
+                if (!(1<=no && no<=items.length)) {
+                    console.log("商品番号は1から"+items.length+"までの値で指定してください。");
+                    console.log("");
+                    return;
+                }
                 console.log("商品番号: "+items[no-1].id+", 商品名: "+items[no-1].name+"を購入します。");
                 if (items[no-1].stock>=1) {
                     items[no-1].stock=items[no-1].stock-1;
@@ -45,6 +50,7 @@
 
             buyItem(5); // 商品購入の関数呼び出し
             buyItem(5); // 商品購入の関数呼び出し
+            //  buyItem(9); // 不適切な商品番号を入力する場合
 
         </script>
     </body>
